@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState("recherche");
 
     useEffect(() => {
         const reveal = () => {
@@ -485,22 +486,22 @@ export default function App() {
             </footer>
 
             {/* Barre de navigation inférieure (Mobile uniquement) */}
-            <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-white border-t border-zinc-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
-                <a className="flex flex-col items-center justify-center text-red-600 bg-red-50 rounded-lg py-1 px-3" href="#properties">
-                    <span className="material-symbols-outlined">search</span>
-                    <span className="text-[10px] font-bold font-label-bold uppercase tracking-widest mt-1">Recherche</span>
+            <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-2 py-2 pb-3 bg-white border-t border-zinc-200 shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+                <a onClick={() => setActiveTab("recherche")} className={`flex flex-col flex-1 items-center justify-center py-1.5 mx-1 rounded-xl transition-colors ${activeTab === 'recherche' ? 'text-red-600 bg-red-50' : 'text-zinc-400 hover:text-red-500 hover:bg-zinc-50'}`} href="#properties">
+                    <span className="material-symbols-outlined text-[22px]">search</span>
+                    <span className="text-[9px] font-bold font-label-bold uppercase tracking-wider mt-1">Recherche</span>
                 </a>
-                <a className="flex flex-col items-center justify-center text-zinc-400 py-1 px-3 hover:text-red-500 transition-colors" href="#">
-                    <span className="material-symbols-outlined">favorite</span>
-                    <span className="text-[10px] font-bold font-label-bold uppercase tracking-widest mt-1">Favoris</span>
+                <a onClick={() => { setActiveTab("favoris"); alert("La liste de vos propriétés favorites sera bientôt disponible !"); }} className={`flex flex-col flex-1 items-center justify-center py-1.5 mx-1 rounded-xl transition-colors ${activeTab === 'favoris' ? 'text-red-600 bg-red-50' : 'text-zinc-400 hover:text-red-500 hover:bg-zinc-50'}`} href="#properties">
+                    <span className="material-symbols-outlined text-[22px]">favorite</span>
+                    <span className="text-[9px] font-bold font-label-bold uppercase tracking-wider mt-1">Favoris</span>
                 </a>
-                <a className="flex flex-col items-center justify-center text-zinc-400 py-1 px-3 hover:text-red-500 transition-colors" href="#contact">
-                    <span className="material-symbols-outlined">calendar_today</span>
-                    <span className="text-[10px] font-bold font-label-bold uppercase tracking-widest mt-1">Réserver</span>
+                <a onClick={() => setActiveTab("reserver")} className={`flex flex-col flex-1 items-center justify-center py-1.5 mx-1 rounded-xl transition-colors ${activeTab === 'reserver' ? 'text-red-600 bg-red-50' : 'text-zinc-400 hover:text-red-500 hover:bg-zinc-50'}`} href="#contact">
+                    <span className="material-symbols-outlined text-[22px]">calendar_today</span>
+                    <span className="text-[9px] font-bold font-label-bold uppercase tracking-wider mt-1">Réserver</span>
                 </a>
-                <a className="flex flex-col items-center justify-center text-zinc-400 py-1 px-3 hover:text-red-500 transition-colors" href="#">
-                    <span className="material-symbols-outlined">person</span>
-                    <span className="text-[10px] font-bold font-label-bold uppercase tracking-widest mt-1">Profil</span>
+                <a onClick={() => { setActiveTab("profil"); alert("L'espace client est en cours de création."); }} className={`flex flex-col flex-1 items-center justify-center py-1.5 mx-1 rounded-xl transition-colors ${activeTab === 'profil' ? 'text-red-600 bg-red-50' : 'text-zinc-400 hover:text-red-500 hover:bg-zinc-50'}`} href="#agency">
+                    <span className="material-symbols-outlined text-[22px]">person</span>
+                    <span className="text-[9px] font-bold font-label-bold uppercase tracking-wider mt-1">Profil</span>
                 </a>
             </nav>
 
