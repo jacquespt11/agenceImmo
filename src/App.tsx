@@ -139,7 +139,7 @@ export default function App() {
                     <div className="max-w-7xl mx-auto px-container-margin grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                         <div className="space-y-stack-md">
                             <h2 className="text-primary font-label-bold">NOTRE VISION</h2>
-                            <h3 className="text-on-background font-headline-lg">L'Excellence Immobilière Redéfinie</h3>
+                            <h3 className="text-on-background font-headline-lg">L'excellence immobilière redéfinie</h3>
                             <p className="text-zinc-600 font-body-md leading-relaxed">
                                 Faire face à l'avenir n'est pas seulement un nom, c'est notre engagement envers chaque client. Nous croyons que l'immobilier à Kinshasa exige une compréhension profonde de l'urbanisme local alliée à des standards internationaux de luxe et de sécurité. 
                             </p>
